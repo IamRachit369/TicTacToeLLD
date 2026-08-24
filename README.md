@@ -4,7 +4,7 @@ Creating a tic tac toe by utilizing the concepts of Low Level Design
 A scalable and extensible implementation of the classic Tic-Tac-Toe game, built using **Low Level Design (LLD)** principles and Object-Oriented Programming (OOP) concepts. 
 
 This repository contains multiple implementations:
-1. **C++** (Core implementation using Design Patterns)
+1. **C++** (Core implementation using Design Patterns) for learning (please refer to CoderArmy to learn the concepts).
 2. **JavaScript (Node.js)** (CLI equivalent)
 3. **React + Vite** (Frontend web application)
 
