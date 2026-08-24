@@ -1,0 +1,74 @@
+:root {
+  --text: #4f514c;
+  --text-muted: #7a7d76;
+  --text-h: #1d2a28;
+  --bg: #f5f1e8;
+  --panel: #fffdf8;
+  --border: #ddd8ca;
+  --border-strong: #c9c2b1;
+  --square: #faf7ef;
+  --square-hover: #f0eadc;
+  --status-bg: #edf2e8;
+  --accent: #c44d32;
+  --secondary: #287a78;
+  --success: #3f8968;
+  --shadow: 0 22px 45px rgba(56, 48, 35, 0.1);
+
+  --sans: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+
+  font: 18px/145% var(--sans);
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(196, 77, 50, 0.08), transparent 32%),
+    linear-gradient(135deg, var(--bg), #ebe7da);
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}

@@ -1,0 +1,142 @@
+.game-shell {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 72px 24px 56px;
+  box-sizing: border-box;
+}
+
+.game-header {
+  margin-bottom: 32px;
+  animation: rise-in 500ms ease-out both;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  animation: rise-in 600ms 100ms ease-out both;
+}
+
+.status-box {
+  width: min(100%, 360px);
+  padding: 14px 18px;
+  border-left: 4px solid var(--accent);
+  background: var(--status-bg);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.status-box--complete {
+  border-left-color: var(--success);
+}
+
+.status-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.status-box strong {
+  display: block;
+  color: var(--text-h);
+  font-size: 20px;
+  line-height: 1.25;
+  margin-top: 3px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 390px);
+  aspect-ratio: 1;
+}
+
+.square {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  background: var(--square);
+  color: var(--text-h);
+  cursor: pointer;
+  font: 700 clamp(2.8rem, 10vw, 4.5rem)/1 var(--heading);
+  transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.square:not(:disabled):hover {
+  border-color: var(--accent);
+  background: var(--square-hover);
+  transform: translateY(-2px);
+}
+
+.square:focus-visible,
+.reset-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.square--x {
+  color: var(--accent);
+}
+
+.square--o {
+  color: var(--secondary);
+}
+
+.reset-button {
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 22px;
+  background: var(--text-h);
+  color: var(--panel);
+  cursor: pointer;
+  font: 700 14px var(--sans);
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.reset-button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keep the board centered on smaller screens without making its controls cramped. */
+@media (max-width: 520px) {
+  .game-shell { padding: 48px 16px 32px; }
+  .game-panel { padding: 22px 16px; }
+}
